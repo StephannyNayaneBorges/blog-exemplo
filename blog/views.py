@@ -8,3 +8,15 @@ def index(request):
     }
 
     return render(request, "index.html", context)
+
+def post(request, post_id):
+    context ={
+        "post": Post.objects.get(pk=post_id),
+    }
+    return render(request, "post.html", context)
+
+def sobre(request):
+    return render(request, "about.html")
+
+def contato(request):
+    return render(request, "contact.html")
